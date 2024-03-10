@@ -32,4 +32,4 @@
 *.app
 
 # Makefile output
-uuid-get-cpp
+uuid-gen-cpp

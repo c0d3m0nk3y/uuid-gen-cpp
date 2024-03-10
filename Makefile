@@ -1,2 +1,2 @@
-uuid-gen-ccp: main.cpp
-	g++ -o uuid-gen-ccp main.cpp
+uuid-gen-cpp: main.cpp
+	g++ -o uuid-gen-cpp main.cpp
