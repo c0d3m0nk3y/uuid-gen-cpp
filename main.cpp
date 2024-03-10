@@ -3,20 +3,15 @@
 #include <ctime>
 #include <iostream>
 #include <string>
-
-const std::string UUID_CHARS {"0123456789abcdef"};
-const signed short UUID_LENGTH {32};
+#include "uuid.h"
 
 void generate_time_based_uuid(std::string &uuid) {}
 void generate_name_based_uuid(std::string &uuid) {}
-void generate_random_uuid(std::string &uuid);
 void insert_uuid_separators(std::string &uuid);
 void print_usage(const char* argv0);
 
 int main (int argc, char *argv[]) {
   std::srand(std::time(nullptr));
-
-  std::string uuid ("", UUID_LENGTH);
 
   if (argc != 2) {
     print_usage(argv[0]);
@@ -24,21 +19,14 @@ int main (int argc, char *argv[]) {
   }
 
   if (std::strcmp(argv[1], "-r") == 0)
-    generate_random_uuid(uuid);
+    std::cout << generate_naive_uuid();
   else {
     print_usage(argv[0]);
     return 0;
   }
 
-  insert_uuid_separators(uuid);
-  std::cout << uuid << std::endl;
-  
+  std::cout << std::endl;
   return 0;
-}
-
-void generate_random_uuid(std::string &uuid) {
-  for (size_t i {0}; i < UUID_LENGTH; ++i)
-    uuid.at(i) = UUID_CHARS.at(std::rand() /  ((RAND_MAX + 1u) / 16));
 }
 
 void insert_uuid_separators(std::string &uuid) {
