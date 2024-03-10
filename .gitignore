@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Makefile output
+uuid-get-cpp

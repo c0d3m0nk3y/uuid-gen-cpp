@@ -23,15 +23,14 @@ int main (int argc, char *argv[]) {
     return 0;
   }
 
-  if(std::strcmp(argv[1], "-h") == 0) {
+  if (std::strcmp(argv[1], "-r") == 0)
+    generate_random_uuid(uuid);
+  else {
     print_usage(argv[0]);
     return 0;
   }
-  else if (std::strcmp(argv[1], "-r") == 0)
-    generate_random_uuid(uuid);
 
   insert_uuid_separators(uuid);
-  
   std::cout << uuid << std::endl;
   
   return 0;
