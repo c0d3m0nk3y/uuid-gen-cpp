@@ -17,6 +17,10 @@ std::string generate_naive_uuid(void) {
   std::string uuid ("", UUID_LENGTH);
   for (size_t i {0}; i < UUID_LENGTH; ++i)
     uuid.at(i) = UUID_CHARS.at(std::rand() /  ((RAND_MAX + 1u) / 16));
+  uuid.insert(20, "-");
+  uuid.insert(16, "-");
+  uuid.insert(12, "-");
+  uuid.insert(8, "-");
   return uuid;
 }
 
