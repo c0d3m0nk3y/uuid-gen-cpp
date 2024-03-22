@@ -10,7 +10,7 @@ std::string Uuid::asString(void) {
   for (byte b: node)
     n += b;
 
-  return tl + "-" + tm + "-" + csr + csl + "-" + n;
+  return tl + "-" + tm + "-" + th + "-" + csr + csl + "-" + n;
 }
 
 std::string generate_naive_uuid(void) {

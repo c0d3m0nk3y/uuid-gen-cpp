@@ -18,8 +18,11 @@ int main (int argc, char *argv[]) {
     return 0;
   }
 
-  if (std::strcmp(argv[1], "-r") == 0)
-    std::cout << generate_naive_uuid();
+  if (std::strcmp(argv[1], "-r") == 0) {
+    std::cout << generate_naive_uuid() << std::endl;
+    Uuid uuid;
+    std::cout << uuid.asString() << std::endl;
+  }
   else {
     print_usage(argv[0]);
     return 0;
